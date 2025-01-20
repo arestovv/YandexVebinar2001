@@ -1,10 +1,9 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int random = new Random().nextInt(10);
+        int random = (int) (Math.random() * 10);
         int tryCount = 3;
         int status = 1;
 
@@ -32,6 +31,7 @@ public class Main {
                     break;
                 }
             } catch (NumberFormatException ignore) {
+                System.out.println("Неверный формат");
             }
         }
         System.out.println("Повторить игру еще раз?");
@@ -39,6 +39,7 @@ public class Main {
         try {
             return Integer.parseInt(name);
         } catch (NumberFormatException ignore) {
+            System.out.println("Неверный формат");
         }
         return 0;
     }
